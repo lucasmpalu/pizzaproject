@@ -10,14 +10,12 @@ const pizzas = {
 const typePizza = (type, message, img) => {
     descriptionContainerJS.innerHTML = `
                 <div class="divTittleAndDescriptionJS">
-                    <h2 id="tittleJS">Pizza de ${type}</span>
+                    <h2 id="tittleJS">Pizza de ${type}</h2>
                     <h4 id="descriptionJS">Esta pizza lleva ${message}</h4>
                 </div>
-                <img src="images/${img}" alt="Pizza de ${type} " class="img-pizzaJS">
-                    `
-    
+                <img src="images/${img}" alt="Pizza de ${type} " class="img-pizzaJS">`
 
-}
+            }
 
 const pizzaChange = () => {
     let valuePizzasList = pizzasList.value

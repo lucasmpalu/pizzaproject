@@ -108,6 +108,7 @@ main {
     background-image: url('images/background.jpg') ;
     background-size: cover;
     opacity: 1;
+    min-height: 800px;
 
 }
 
