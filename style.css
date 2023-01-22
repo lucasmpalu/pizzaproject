@@ -1,0 +1,203 @@
+* { padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    height: 100%;
+    font-family: 'Bebas Neue', cursive;
+}
+
+body {
+    height: 100vh;
+    min-height: 100%;
+    
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(13, 13, 13);
+    color: #fafafa;
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    transform: scale(0.9);
+    bottom: -20px;
+    z-index: 10;
+}
+nav {
+    display: flex;
+    align-items: center;
+
+}
+
+.ul-nav {
+ display: flex;
+ flex-direction: column;
+ align-items: flex-end;
+ list-style-type: none;
+ position: absolute;
+ top: 10vh;
+ right: 1%;
+ left: 1%;
+ background-color: rgb(13, 13, 13);
+ border:  1px solid #fafafa;
+ border-top: 0;
+ border-radius: 0 0 10px 10px ;
+ padding: 1rem;
+ display: none;
+ gap: 1rem;
+
+ 
+
+}
+
+.li-nav {
+    height: max-content;
+    padding: 0.1rem;
+
+}
+
+
+/* MENU HAMBURGUESA  */
+
+#menu-toggle {
+    visibility: hidden;
+}
+
+.img-menu {
+    cursor: pointer
+}
+
+#menu-toggle:checked + .ul-nav {
+    display: flex;
+
+}
+
+
+
+
+
+footer {
+    height: 5vh;
+    
+    background-color: rgb(13, 13, 13);
+    color: #fafafa;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background-image: url('images/background.jpg') ;
+    background-size: cover;
+    opacity: 1;
+
+}
+
+.container-pizza {
+    max-height: 600px;
+    /* height: 300px; */
+    width: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 1;
+    background-color: rgb(13, 13, 13);
+    color: #fafafa;
+    border-radius: 10px;
+    padding: 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: 5px 5px 10px black;
+}
+
+
+select {
+    background: rgb(13, 13, 13);
+    border: none;
+    color: #fafafa;
+    
+}
+
+
+
+
+
+.container-select {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+}
+
+#tittle-pizza, .hand {
+    font-size: 2rem;
+} 
+
+.hand {
+    position: relative;
+    bottom: -35px;
+    right: 35px;
+    z-index: 0;
+}
+
+
+#description-containerJS {
+    display: flex;
+    flex-direction: column;
+    justify-content: center!important;
+    align-items: center!important;
+    gap: 1rem;
+}
+
+.img-pizzaJS {
+    width: 100%;
+    object-fit: cover;
+}
+
+
+/* HOVERS */
+
+.li-nav:hover {
+    cursor: pointer;
+    border-bottom: 1px solid #fafafa;
+    transform: scale(1.15);
+    transition: all 1.6s;
+}
+
+.logo:hover {
+    transform: scale(1.0);
+    transition: all 0.33s;
+
+}
+
+.logo:active {
+    transform: scale(0.9);
+
+}
+
+.img-menu:active {
+    transform: scale(0.9);
+}
+
+#tittle-pizzas:hover + .hand {
+    
+    transform: translate(15px, -4px);
+    transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}

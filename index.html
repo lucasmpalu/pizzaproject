@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="mediaqueriesIndex.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <nav>
+            <label for="menu-toggle">
+                <img src="images/menu-toggle.png" class="img-menu" alt="">
+            </label>
+            <input type="checkbox" id="menu-toggle">
+            <ul class="ul-nav">
+                <li class="li-nav">Home</li>
+                <li class="li-nav">Locales</li>
+                <li class="li-nav">Productos</li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+            <div class="container-pizza">
+                <div class="container-select">
+                    <h1 id="tittle-pizzas">Nuestras <br>pizzas </h1><span class="hand">👉</span>
+                    <select name="select" id="pizzas-list" value="-">
+                        <option value="none"> - </option>
+                        <option value="muzzarella">Muzzarella</option>
+                        <option value="calabresa">Calabresa</option>
+                        <option value="fugazzetta">Fugazzetta</option>
+                        <option value="margarita">Margarita</option>
+                        <option value="jyq">Muzzarella y jamón</option>
+                    </select>
+                </div>
+                <div id="description-containerJS">
+                </div>
+            </div>
+            
+    </main>
+    <footer>
+        Hecho con ❤️ por Lucas Palú
+   </footer>
+   <script src="validation.js"></script>
+   <script src="utils.js"></script>
+        <script src="main.js"></script>
+</body>
+</html>
