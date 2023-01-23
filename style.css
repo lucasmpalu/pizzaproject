@@ -55,15 +55,12 @@ nav {
  display: none;
  gap: 1rem;
 
+
  
 
 }
 
-.li-nav {
-    height: max-content;
-    padding: 0.1rem;
 
-}
 
 
 /* MENU HAMBURGUESA  */
@@ -126,6 +123,7 @@ main {
     padding: 2rem 2rem;
     gap: 1.5rem;
     box-shadow: 5px 5px 10px black;
+    height: 470px;
 }
 
 
@@ -133,6 +131,7 @@ select {
     background: rgb(13, 13, 13);
     border: none;
     color: #fafafa;
+    height: 3rem;
     
 }
 
@@ -143,6 +142,7 @@ select {
 .container-select {
     display: flex;
     justify-content: space-between;
+    align-items: flex-end;
 
     width: 100%;
 }
@@ -153,8 +153,7 @@ select {
 
 .hand {
     position: relative;
-    bottom: -35px;
-    right: 35px;
+    right: 20px;
     z-index: 0;
 }
 
@@ -175,12 +174,12 @@ select {
 
 /* HOVERS */
 
-.li-nav:hover {
+/* .li-nav:hover {
     cursor: pointer;
     border-bottom: 1px solid #fafafa;
     transform: scale(1.15);
     transition: all 1.6s;
-}
+} */
 
 .logo:hover {
     transform: scale(1.0);
@@ -199,6 +198,32 @@ select {
 
 #tittle-pizzas:hover + .hand {
     
-    transform: translate(15px, -4px);
+    transform: translate(15px);
     transition: transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+.li-nav {
+    /* ME ESTABA FALTANDO POSICIONAR AL PADRE PARA QUE ME SALGA EL EFECTO, SINO ME SALIA EN EL UL, EN VEZ DEL LI */
+    position: relative; 
+}
+
+.li-nav::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: goldenrod;
+    box-shadow: 0px 0px 2px black;
+    bottom: -5px;
+    right: 0%;
+    width: 0%;
+    transition: .3s;
+
+}
+
+.li-nav:hover::after {
+    content: '';
+    width: 100%;
+        left: 0%;
+
 }

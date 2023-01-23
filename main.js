@@ -31,7 +31,7 @@ const pizzaChange = () => {
             typePizza('Calabresa', 'salsa de tomate, queso Muzzarella, salame tipo Calabresa, aceite de oliva y oregano', 'calabresa.jpg')
             break
         case 'margarita':
-            typePizza('Margarita', 'salsa de tomate, queso Muzzarella, tomates cherrys, aceite de oliva, oregano y albahaca fresca', 'margarita.jpg')
+            typePizza('Margarita', 'salsa de tomate, queso Muzzarella, tomates cherrys, aceite de oliva, oregano y albahaca', 'margarita.jpg')
 
             break
         case 'jyq':
