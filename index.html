@@ -29,24 +29,32 @@
     </header>
     <main>
 
-            <div class="container-pizza">
+            <form class="form-card" id="form-card">
                 <div class="container-select">
                     <h1 id="tittle-pizzas">Nuestras <br>pizzas </h1><span class="hand">👉</span>
                     <select name="select" id="pizzas-list" value="-">
-                        <option value="none"> Despliegue las opciones🍕</option>
+                        <option value="none"> Opciones🍕</option>
                         <option value="muzzarella">Muzzarella</option>
                         <option value="calabresa">Calabresa</option>
                         <option value="fugazzetta">Fugazzetta</option>
                         <option value="margarita">Margarita</option>
-                        <option value="jyq">Muzzarella y jamón</option>
+                        <option value="jamon y queso">Muzza y jamón</option>
                     </select>
+                    <hr>
                 </div>
-            <div>
-                <div id="description-containerJS">
+                
+                <div id="container-imgJS">
 
                 </div>
-            </div>
-        </div>
+                <div id="container-buttons" class="container-buttons">
+                    <button id="button-add" type="submit" class="button-add" >
+                        Agregar al carrito
+                    </button>
+                    <button id="button-cart" class="button-cart">
+                        <img src="images/cart.png" alt="Carrito">
+                    </button>
+                </div>
+            </form>
             
     </main>
     <footer>
@@ -54,6 +62,6 @@
    </footer>
    <script src="validation.js"></script>
    <script src="utils.js"></script>
-        <script src="main.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
