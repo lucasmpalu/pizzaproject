@@ -1,3 +1,5 @@
+
+
 const pizzas = [
     { type: 'Muzzarella',
       price: 1500,
@@ -34,49 +36,38 @@ const pizzas = [
 let pedido = JSON.parse(localStorage.getItem('Productos')) || []
 
 
+const goToPay = (e) => {
+    e.preventDefault()
+
+}
+
+const backToProducts = (e) => {
+    e.preventDefault()
+}
+
 const renderItems = (item) => {
 
-
-    return `<img src="images/${item.img}" class="img-cardsTotals">
+    return `<img src="images/${item.imagen}" class="img-cardsTotals">
             </img>
-            <h4>Pizza de ${item.type}</h4>
-            <p>$${item.price}</p>
+            <h4>Pizza de ${item.tipo}</h4>
+            <p>$${item.precio}</p>
     `
 }
 
 const renderTotal = () => {
-
-    $cardsItemsJS.innerHTML = pedido.map(item => renderItems(item)).join('')
-}
-
-const createElements = () => {
-
-    let totalCarrito = pedido.map(item => item.price)
-
-    $card.innerHTML = `
-        <div id="tittle-totalJS">
-        Tu pedido es:
-        </div>
-        <div id="cards-itemsJS">
-        
-        </div>
-        Total a pagar: 
-        </div id="total-toPayJS">
-        </button id="button-toPayTotalJS">
-    `
-}
-
-const deleteElements = () => {
-    $card.innerHTML = ''
+   
+    $cardsRenderJS.innerHTML = pedido.map(item => renderItems(item)).join('')
 }
 
 const totalToPay = (e) => {
     e.preventDefault()
+
     if(pedido.length > 0) {
-        deleteElements()
-        createElements()
         renderTotal()
-    }  
+        console.log(pedido)
+    }  else {
+        Swal.fire('Any fool can use a computer')
+    }
 }
 
 const saveToLocalStorage = (pedidoX) => {
@@ -85,23 +76,27 @@ const saveToLocalStorage = (pedidoX) => {
 
 }
 
-const saveData = (typeX, price, img) => {
+const saveData = (type, price, img) => {
 
     pedido = [...pedido,
-        { tipo: typeX,
+        { tipo: type,
         precio: parseInt(price),
-        imagen: img} ]
-
-     saveToLocalStorage(pedido)
+        imagen: img
+    }]
+        saveToLocalStorage(pedido)
 }
 
-const addCarrito = () => {
+const addCarrito = (e) => {
     e.preventDefault()
 
     let valueSelect = $pizzasList.value
     let pizzaActive = pizzas.find(item => item.type.toLowerCase() == valueSelect)
 
-    saveData(pizzaActive.type, pizzaActive.price, pizzaActive.img)
+    let type = pizzaActive.type
+    let price = pizzaActive.price
+    let img = pizzaActive.img
+
+    saveData(type, price, img)
     
 }
 
@@ -132,43 +127,11 @@ const pizzaChange = () => {
 
 
 const init = () => {
-
-$card.addEventListener('submit', addCarrito)
+  
 $pizzasList.addEventListener('change', pizzaChange)
 $buttonAdd.addEventListener('click', addCarrito)
 $buttonCart.addEventListener('click', totalToPay)
 
-
-
 } 
 
 init()
-
-
-
-
-
-    // switch (valuePizzasList) {
-    //     case 'muzzarella':
-    //         renderPizza('Muzzarella', 'salsa de tomate, queso muzzarella, aceite de oliva y oregano', 'muzzarella.jpg')
-    //         break;
-    //     case 'fugazzetta':
-    //         renderPizza('Fugazzetta', 'queso Muzzarella, queso Sardo y cebolla', 'fugazzetta.jpg', 'fugazzettaJS')
-    //         break
-    //     case 'calabresa':
-    //         renderPizza('Calabresa', 'salsa de tomate, queso Muzzarella, salame tipo Calabresa, aceite de oliva y oregano', 'calabresa.jpg')
-    //         break
-    //     case 'margarita':
-    //         renderPizza('Margarita', 'salsa de tomate, queso Muzzarella, tomates cherrys, aceite de oliva, oregano y albahaca', 'margarita.jpg')
-
-    //         break
-    //     case 'jyq':
-    //         renderPizza('Jamon y queso', 'salsa de tomate, jamon cocido, queso Muzzarello, aceite de oliva y oregano', 'jyq.jpg')
-    //         break
-    //     case 'none':
-    //         descriptionContainerJS.innerHTML = ``
-
-    //     break
-    //     default:
-    //         break;
-    // }

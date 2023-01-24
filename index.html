@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="mediaqueriesIndex.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueriesIndex.css">
 </head>
 <body>
     <header>
@@ -47,12 +47,14 @@
 
                 </div>
                 <div id="container-buttons" class="container-buttons">
-                    <button id="button-add" type="submit" class="button-add" >
+                    <button id="button-add" class="button-add" >
                         Agregar al carrito
                     </button>
-                    <button id="button-cart" class="button-cart">
-                        <img src="images/cart.png" alt="Carrito">
-                    </button>
+               
+                        <button type="submit " formaction="cart.html" id="button-cart" class="button-cart">
+                            <img src="images/cart.png" alt="Carrito">
+                        </button>
+                    </a>  
                 </div>
             </form>
             
@@ -60,8 +62,10 @@
     <footer>
         Hecho con ❤️ por Lucas Palú
    </footer>
+   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
    <script src="validation.js"></script>
    <script src="utils.js"></script>
-    <script src="main.js"></script>
+   <script src="main.js"></script>
+
 </body>
 </html>

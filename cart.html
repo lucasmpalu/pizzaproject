@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Carrito - Pizzeria</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="mediaqueriesIndex.css">
+        </head>
+        <body>
+            <header>
+                <img src="images/logo.png" alt="Logo" class="logo">
+                <nav>
+                    <label for="menu-toggle">
+                        <img src="images/menu-toggle.png" class="img-menu" alt="">
+                    </label>
+                    <input type="checkbox" id="menu-toggle">
+                    <ul class="ul-nav">
+                        <li class="li-nav">Home</li>
+                        <li class="li-nav">Locales</li>
+                        <li class="li-nav">Productos</li>
+                        <li class="li-nav">Redes</li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+
+                <form action="" id="form-cart" class="form-cart">
+                    <div class="header-renderJS" id="header-renderJS">
+                        <h1>Carrito de compras</h2>
+                    </div>
+                    <div class="cards-renderJS" id="cards-renderJS">
+                        <hr>
+                    </div>
+                    <div class="price-renderJS" id="price-renderJS">
+                        <p id="total-price">Total: $3200</p>
+                    </div>
+                    <div class="container-payAndBackJS" id="container-payAndBackJS">
+                        <button class="button-toPayJS" id="button-toPayJS">Ir a pagar</button>
+                        <button class="button-backJS" id="button-backJS">Volver</button>
+                    </div>
+                </form>
+                
+            </main>
+            <footer>
+                Hecho con ❤️ por Lucas Palú
+            </footer>
+            <script src="validation.js"></script>
+            <script src="utils.js"></script>
+            <script src="main.js"></script>
+        </body>
+    </html>

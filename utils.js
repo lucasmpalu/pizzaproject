@@ -7,12 +7,21 @@ const $pizzasList = document.getElementById('pizzas-list')
 const $descriptionContainerJS = document.getElementById('container-imgJS')
 const $containerButtons = document.getElementById('container-buttons')
 
+//TITTLE AND SELECT
+const $tittlePizzas = document.getElementById('tittle-pizzas')
+const $handEmoji = document.getElementsByClassName('hand')
+
 //BOTONES PARA AGREGAR O IR AL CARRITO
 const $buttonAdd = document.getElementById('button-add')
 const $buttonCart = document.getElementById('button-cart')
 
+
 //RENDERIZADO DEL TOTAL DEL CARRITO
-const $cardsItemsJS = document.getElementById('cards-itemsJS')
-const $tittleTotalJS = document.getElementById('tittle-totalJS')
-const $totalToPayJS = document.getElementById('total-toPayJS')
-const $buttonToPayTotalJS = document.getElementById('button-toPayTotalJS')
+const $formCart = document.getElementById('form-cart')
+const $headerRenderJS = document.getElementById('header-renderJS')
+const $cardsRenderJS = document.getElementById('cards-renderJS')
+const $priceRenderJS = document.getElementById('price-renderJS')
+const $containerPayAndBackJS = document.getElementById('container-payAndBack')
+const $buttonToPayJS = document.getElementById('button-toPayJS')
+const $buttonBackJs = document.getElementById('button-backJS')
+const $totalPrice = document.getElementById('total-price')
