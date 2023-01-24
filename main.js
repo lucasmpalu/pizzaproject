@@ -42,6 +42,14 @@ const backToProducts = (e) => {
     location.href = 'index.html'
 }
 
+const clearCart = () => {
+    if(window.confirm('Seguro quiere vaciar el carrito?')) {
+        pedido = []  //SI PONÍA SOLO LIMPIAR EL LOCAL STORAGE 👇 NO PODÍA LIMPIAR LA CARD DE PRODUCTOS PEDIDOSG
+        localStorage.clear();
+        renderTotal()
+    }
+}
+
 const renderItems = (item) => {
 
     return `<div style="display: flex; border-radius= 5px; padding: 5px; gap: 1rem;">
@@ -54,18 +62,16 @@ const renderItems = (item) => {
     `
 }
 
-const renderPriceTotal = (prices) => {
-
-}
 
 const renderTotal = () => {
 
+    pedido.length > 0
     let valueAdditionPrices = 0 //ESTE VA A SER EL VALOR INICIAL, CUANDO LO PONGO ADENTRO DEL REDUCE.
     let additionPrices = pedido.reduce((acc, curr) => Number(acc) + Number(curr.precio), valueAdditionPrices) //--> ACÁ ACC Y CURR, PUEDE SER CUALQUIER NOMBRE, ACC VA A TOMAR EL VALOR INICIAL Y EN ESTE CASO ES valueAdditionPrices
-    // renderPriceTotal(additionPrices)
 
     $cardsRenderJS.innerHTML = pedido.map(item => renderItems(item)).join('')
     $totalPriceJS.innerHTML = `TOTAL: $${additionPrices}`
+
 
 }
 
@@ -109,6 +115,7 @@ const addCarrito = (e) => {
     let img = pizzaActive.img
 
     saveData(type, price, img)
+    Swal.fire('Su producto fue agregado')
     
 
 }
@@ -131,10 +138,12 @@ const pizzaChange = () => {
     let type = pizzaActive.type
     let ingredients = pizzaActive.ingredients
     let img = pizzaActive.img
-
+    
     renderPizza(type, ingredients, img)
 
 }
+
+
 
 const init = () => {
   
@@ -144,7 +153,7 @@ $buttonCart?.addEventListener('click', totalToPay)
 document?.addEventListener('DOMContentLoaded', renderTotal)
 $buttonBackJs?.addEventListener('click', backToProducts)
 $buttonToPayJS?.addEventListener('click', goToPay)
-
+$cleanCartJS?.addEventListener('click', clearCart)
 } 
 
 init()
