@@ -312,21 +312,37 @@ hr {
     display: flex;
     justify-content: center;
     letter-spacing: 2px!important;
+    border-bottom: 1px solid #fafafa;
 }
 
 .cards-renderJS {
  height: 70%;
- overflow: scroll;
+ overflow-y: scroll;
+ overflow-x: auto;
  width: 100%;
  position: relative;
+ 
+
 }
 
-.cards-renderJS hr {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    border: 1px solid #fafafa;
+
+.cards-renderJS::-webkit-scrollbar{
+    width: 4px;
+    
 }
+
+.cards-renderJS::-webkit-scrollbar-thumb{
+    background-color:rgb(173, 53, 53);
+    border-radius: 4px;
+
+
+}
+
+.cards-renderJS::-webkit-scrollbar-track-piece  {
+    background: none;
+
+}
+
 
 .price-renderJS {
 height: 10%;
@@ -335,6 +351,7 @@ display: flex;
 justify-content: flex-end;
 align-items: center;
 font-size: 1.2rem;
+border-bottom: 2px solid #fafafa;
 }
 
 .container-payAndBackJS {

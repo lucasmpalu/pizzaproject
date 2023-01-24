@@ -1,5 +1,3 @@
-
-
 const pizzas = [
     { type: 'Muzzarella',
       price: 1500,
@@ -35,40 +33,59 @@ const pizzas = [
  
 const goToPay = (e) => {
     e.preventDefault()
+    
 
 }
 
 const backToProducts = (e) => {
     e.preventDefault()
+    location.href = 'index.html'
 }
 
 const renderItems = (item) => {
 
-    return `<img src="images/${item.imagen}" class="img-cardsTotals">
-            </img>
-            <h4>Pizza de ${item.tipo}</h4>
-            <p>$${item.precio}</p>
+    return `<div style="display: flex; border-radius= 5px; padding: 5px; gap: 1rem;">
+                <img src="images/${item.imagen}" class="img-cardsTotals" style="border-radius: 5px; height: 55px;">
+                <div id="pizzaAndPriceJS">
+                    <h4>Pizza de ${item.tipo}</h4>
+                    <p>$${item.precio}</p>
+                </div>
+            </div>
     `
 }
 
+const renderPriceTotal = (prices) => {
+
+}
+
 const renderTotal = () => {
-   
+
+    let valueAdditionPrices = 0 //ESTE VA A SER EL VALOR INICIAL, CUANDO LO PONGO ADENTRO DEL REDUCE.
+    let additionPrices = pedido.reduce((acc, curr) => Number(acc) + Number(curr.precio), valueAdditionPrices) //--> ACÁ ACC Y CURR, PUEDE SER CUALQUIER NOMBRE, ACC VA A TOMAR EL VALOR INICIAL Y EN ESTE CASO ES valueAdditionPrices
+    // renderPriceTotal(additionPrices)
+
     $cardsRenderJS.innerHTML = pedido.map(item => renderItems(item)).join('')
+    $totalPriceJS.innerHTML = `TOTAL: $${additionPrices}`
+
 }
 
 const totalToPay = (e) => {
     e.preventDefault()
 
     if(pedido.length > 0) {
-        console.log('TIENE COSAS EN EL CARRITO')
-        console.log(pedido)
+        location.href = 'cart.html'
         renderTotal()
+
     }  else {
         Swal.fire('Su carrito está vacío')
     }
 }
 
+const saveToLocalStorage = (pedido) => {
+    
+    localStorage.setItem('Productos', JSON.stringify(pedido))
 
+}
 
 const saveData = (type, price, img) => {
 
@@ -79,12 +96,6 @@ const saveData = (type, price, img) => {
     }]
 
     saveToLocalStorage(pedido)
-}
-
-const saveToLocalStorage = (pedido) => {
-    
-    localStorage.setItem('Productos', JSON.stringify(pedido))
-
 }
 
 const addCarrito = (e) => {
@@ -101,7 +112,6 @@ const addCarrito = (e) => {
     
 
 }
-
 
 const renderPizza = (type, ingredients, img) => {
     $descriptionContainerJS.innerHTML = `
@@ -126,16 +136,27 @@ const pizzaChange = () => {
 
 }
 
-
-
 const init = () => {
   
-$pizzasList.addEventListener('change', pizzaChange)
-$buttonCart.addEventListener('click', totalToPay)
-$buttonAdd.addEventListener('click', addCarrito)
-// $buttonBackJs.addEventListener('click', backToProducts)
-// $buttonToPayJS.addEventListener('click', goToPay)
+$pizzasList?.addEventListener('change', pizzaChange)
+$buttonAdd?.addEventListener('click', addCarrito)
+$buttonCart?.addEventListener('click', totalToPay)
+document?.addEventListener('DOMContentLoaded', renderTotal)
+$buttonBackJs?.addEventListener('click', backToProducts)
+$buttonToPayJS?.addEventListener('click', goToPay)
 
 } 
 
 init()
+
+// const renderCart = () => {
+//     console.log(pedido)
+//     pedido.map(p => $cardsRenderJS.innerHTML += `
+//     <div class="divTittleAndDescriptionJS">
+//         <h2 id="tittleJS">Pizza de ${p.tipo}</h2>
+//         <h2>Precio: ${p.precio}</h2>
+//     </div>
+    
+//     `)
+    
+// }
