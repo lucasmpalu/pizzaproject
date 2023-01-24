@@ -32,10 +32,7 @@ const pizzas = [
       ingredients: 'salsa de tomate, jamon cocido, queso Muzzarello, aceite de oliva y oregano',
       img: 'jyq.jpg'}    
 ]
-
-let pedido = JSON.parse(localStorage.getItem('Productos')) || []
-
-
+ 
 const goToPay = (e) => {
     e.preventDefault()
 
@@ -63,18 +60,15 @@ const totalToPay = (e) => {
     e.preventDefault()
 
     if(pedido.length > 0) {
-        renderTotal()
+        console.log('TIENE COSAS EN EL CARRITO')
         console.log(pedido)
+        renderTotal()
     }  else {
-        Swal.fire('Any fool can use a computer')
+        Swal.fire('Su carrito está vacío')
     }
 }
 
-const saveToLocalStorage = (pedidoX) => {
-    
-    localStorage.setItem('Productos', JSON.stringify(pedidoX))
 
-}
 
 const saveData = (type, price, img) => {
 
@@ -83,7 +77,14 @@ const saveData = (type, price, img) => {
         precio: parseInt(price),
         imagen: img
     }]
-        saveToLocalStorage(pedido)
+
+    saveToLocalStorage(pedido)
+}
+
+const saveToLocalStorage = (pedido) => {
+    
+    localStorage.setItem('Productos', JSON.stringify(pedido))
+
 }
 
 const addCarrito = (e) => {
@@ -98,6 +99,7 @@ const addCarrito = (e) => {
 
     saveData(type, price, img)
     
+
 }
 
 
@@ -129,8 +131,10 @@ const pizzaChange = () => {
 const init = () => {
   
 $pizzasList.addEventListener('change', pizzaChange)
-$buttonAdd.addEventListener('click', addCarrito)
 $buttonCart.addEventListener('click', totalToPay)
+$buttonAdd.addEventListener('click', addCarrito)
+// $buttonBackJs.addEventListener('click', backToProducts)
+// $buttonToPayJS.addEventListener('click', goToPay)
 
 } 
 

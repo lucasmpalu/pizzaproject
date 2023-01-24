@@ -1,3 +1,8 @@
+
+let pedido = JSON.parse(localStorage.getItem('Productos')) || []
+
+
+
 // CARTA GENERAL PARA AGREGAR EN CARRITO
 const $card = document.getElementById('form-card')
 
